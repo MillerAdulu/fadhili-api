@@ -17,7 +17,8 @@ class PurchaseResource extends JsonResource
         return [
             'id' => $this->id,
             'donorId' => $this->donor_id,
-            'donationId' => $this->donation_id
+            'donationId' => $this->donation_id,
+            'paymentStatus' => $this->payment_status
         ];
     }
 }
