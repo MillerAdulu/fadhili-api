@@ -41,3 +41,11 @@ Route::group(['prefix' => 'post'], function () {
     Route::get('/', 'PostController@index');
     Route::get('/{id}', 'PostController@show');
 });
+
+Route::group(['prefix' => 'purchase'], function () {
+    Route::get('/', 'PurchaseController@index');
+    Route::post('/', 'PurchaseController@store');
+    Route::get('/{id}', 'PurchaseController@show');
+    Route::post('/update', 'PurchaseController@update');
+    Route::get('/destroy/{id}', 'PurchaseController@destroy');
+});
