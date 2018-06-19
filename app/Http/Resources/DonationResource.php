@@ -19,9 +19,6 @@ class DonationResource extends JsonResource
             'name' => $this->name,
             'price' => $this->price,
             'destination' => $this->destination,
-            'createdAt' => $this->created_at,
-            'updatedAt' => $this->updated_at,
-            'deletedAt' => $this->deleted_at
         ];
     }
 }
