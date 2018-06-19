@@ -14,6 +14,14 @@ class DonorResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'email' => $this->email,
+            'userName' => $this->username,
+            'phoneNumber' => $this->phone_number,
+            'createdAt' => $this->created_at,
+            'updatedAt' => $this->updated_at,
+            'deletedAt' => $this->deleted_at
+        ];
     }
 }
