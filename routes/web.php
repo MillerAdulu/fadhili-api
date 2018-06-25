@@ -49,3 +49,8 @@ Route::group(['prefix' => 'purchase'], function () {
     Route::post('/update', 'PurchaseController@update');
     Route::get('/destroy/{id}', 'PurchaseController@destroy');
 });
+
+Route::group(['prefix' => 'destination'], function () {
+	Route::get('/', 'DestinationController@index');
+	Route::get('/{id}', 'DestinationController@show');
+});

@@ -56,13 +56,15 @@ class PurchaseController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \App\Http\Resources\PurchaseResource
+     * @return \App\Http\Resources\PurchaseCollection
      */
     public function show($id)
     {
-        return new PurchaseResource(
-            Purchase::findOrFail($id)
-        );
+         return new PurchaseCollection (
+			PurchaseResource::collection(
+            	Purchase::where('donor_id', $id)
+        	)
+		);
     }
 
     /**
