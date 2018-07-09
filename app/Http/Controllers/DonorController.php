@@ -6,6 +6,7 @@ use App\Donor;
 use App\Http\Resources\DonorCollection;
 use App\Http\Resources\DonorResource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class DonorController extends Controller
 {
@@ -70,6 +71,21 @@ class DonorController extends Controller
             Donor::findOrFail($id)
         );
 
+    }
+
+    public function login(Request $request) {
+        $request->validate([
+            'donorEmail' => 'email'
+        ]);
+
+        $donor = Donor::where('email', $request->donorEmail)->firstOrFail();
+
+        if(Hash::check($request->donorPassword, $donor->password)) {
+            return new DonorResource(
+                $donor
+            );
+        } else 
+        return null;
     }
 
     /**

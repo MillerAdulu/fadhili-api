@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(['prefix' => 'donor'], function () {
     Route::get('/', 'DonorController@index');
+    Route::post('/login', 'DonorController@login');
     Route::post('/', 'DonorController@store');
     Route::get('/{id}', 'DonorController@show');
     Route::post('/update', 'DonorController@update');
