@@ -15,12 +15,12 @@
     public function toArray($request)
     {
       return [
-        'id' => $this->id,
-        'title' => $this->title,
-        'excerpt' => $this->excerpt,
-        'body' => $this->body,
-        'image' => $this->image,
-        'slug' => $this->slug,
+        'postId' => $this->id,
+        'postTitle' => $this->title,
+        'postExcerpt' => $this->excerpt,
+        'postBody' => $this->body,
+        'postImage' => $this->image,
+        'postSlug' => $this->slug,
         'createdAt' => (string) $this->created_at,
         'updatedAt' => (string) $this->updated_at
       ];

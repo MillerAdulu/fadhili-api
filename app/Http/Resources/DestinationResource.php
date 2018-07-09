@@ -15,10 +15,10 @@ class DestinationResource extends JsonResource
     public function toArray($request)
     {
         return [
-          'id' => $this->id,
-          'name' => $this->name,
-          'crisis' => $this->crisis,
-          'location' => $this->location,
+          'destinationId' => $this->id,
+          'destinationName' => $this->name,
+          'destinationCrisis' => $this->crisis,
+          'destinationLocation' => $this->location,
           'createdAt' => (string) $this->created_at,
           'updatedAt' => (string) $this->updated_at
         ];
