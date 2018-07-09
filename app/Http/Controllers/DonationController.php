@@ -32,17 +32,17 @@ class DonationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'price' => 'required|numeric',
-            'destination' => 'required|exists:destinations, id'
+            'donationName' => 'required',
+            'donationPrice' => 'required|numeric',
+            'donationDestination' => 'required|exists:destinations, id'
         ]);
 
         $donation = new Donation;
 
-        $donation->name = $request->name;
-        $donation->image = $request->image;
-        $donation->price = $request->price;
-        $donation->destination = $request->destination;
+        $donation->name = $request->donationName;
+        $donation->image = $request->donationImage;
+        $donation->price = $request->donationPrice;
+        $donation->destination = $request->donationDestination;
 
         try {
 
@@ -82,19 +82,19 @@ class DonationController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'price' => 'required|numeric',
-            'destination' => 'required|exists:destinations, id'
+            'donationName' => 'required',
+            'donationPrice' => 'required|numeric',
+            'donationDestination' => 'required|exists:destinations, id'
         ]);
 
         $donation = Donation::findOrFail(
             $request->id
         );
 
-        $donation->name = $request->name;
-        $donation->image = $request->image;
-        $donation->price = $request->price;
-        $donation->destination = $request->destination;
+        $donation->name = $request->donationName;
+        $donation->image = $request->donationImage;
+        $donation->price = $request->donationPrice;
+        $donation->destination = $request->donationDestination;
 
         $donation->saveOrFail();
 

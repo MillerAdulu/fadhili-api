@@ -30,18 +30,18 @@ class DonorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
-            'userName' => 'required',
-            'phoneNumber' => 'required|numeric',
-            'password' => 'required'
+            'donorEmail' => 'required|email',
+            'donorUserName' => 'required',
+            'donorPhoneNumber' => 'required|numeric',
+            'donorPassword' => 'required'
         ]);
 
         $donor = new Donor;
 
-        $donor->email = $request->email;
-        $donor->username = $request->userName;
-        $donor->phone_number = $request->phoneNumber;
-        $donor->password = $request->password;
+        $donor->email = $request->donorEmail;
+        $donor->username = $request->donorUserName;
+        $donor->phone_number = $request->donorPhoneNumber;
+        $donor->password = $request->donorPassword;
 
         try {
 
@@ -81,17 +81,17 @@ class DonorController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'id' => 'bail|required',
-            'email' => 'email',
-            'phoneNumber' => 'numeric'
+            'donorId' => 'bail|required',
+            'donorEmail' => 'email',
+            'donorPhoneNumber' => 'numeric'
         ]);
 
-        $donor = Donor::findOrFail($request->id);
+        $donor = Donor::findOrFail($request->donorId);
 
-        $donor->email = $request->email;
-        $donor->username = $request->userName;
-        $donor->phone_number = $request->phoneNumber;
-        $donor->password = $request->password;
+        $donor->email = $request->donorEmail;
+        $donor->username = $request->donorUserName;
+        $donor->phone_number = $request->donorPhoneNumber;
+        $donor->password = $request->donorPassword;
         $donor->saveOrFail();
 
         return new DonorResource(
