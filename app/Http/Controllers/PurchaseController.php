@@ -38,8 +38,8 @@ class PurchaseController extends Controller
 
         $purchase = new Purchase;
 
-        $purchase->donor_id = $request->donor_id;
-        $purchase->donation_id = $request->donation_id;
+        $purchase->donor_id = $request->donorId;
+        $purchase->donation_id = $request->donationId;
 
         try {
             $purchase->saveOrFail();
@@ -83,12 +83,12 @@ class PurchaseController extends Controller
         ]);
 
         $purchase = Purchase::find(
-            $request->id
+            $request->donationId
         );
 
-        $purchase->donor_id = $request->donor_id;
-        $purchase->donation_id = $request->donation_id;
-        $purchase->payment_status = $request->payment_status;
+        $purchase->donor_id = $request->donorId;
+        $purchase->donation_id = $request->donationId;
+        $purchase->payment_status = $request->paymentStatus;
 
         try {
             $purchase->saveOrFail();
