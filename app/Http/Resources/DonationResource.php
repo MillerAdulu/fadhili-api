@@ -15,10 +15,10 @@
     public function toArray($request)
     {
       return [
-        'id' => $this->id,
-        'name' => $this->name,
-        'price' => $this->price,
-        'destination' => $this->destination,
+        'donationId' => $this->id,
+        'donationName' => $this->name,
+        'donationPrice' => $this->price,
+        'donationDestination' => $this->destination,
         'createdAt' => (string) $this->created_at,
         'updatedAt' => (string) $this->updated_at
       ];
