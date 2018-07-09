@@ -18,6 +18,7 @@
         'purchaseId' => $this->id,
         'donorId' => $this->donor_id,
         'donationId' => $this->donation_id,
+        'donationAmount' => $this->amount,
         'paymentStatus' => $this->payment_status,
         'createdAt' => (string) $this->created_at,
         'updatedAt' => (string) $this->updated_at
