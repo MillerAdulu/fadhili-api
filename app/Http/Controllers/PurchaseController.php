@@ -32,8 +32,8 @@ class PurchaseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'donor_id' => 'bail|required|exists:donors,id',
-            'donation_id' => 'bail|required|exists:donations_id'
+            'donor_id' => 'required|exists:donors,id',
+            'donation_id' => 'required|exists:donations_id'
         ]);
 
         $purchase = new Purchase;
@@ -77,9 +77,9 @@ class PurchaseController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'id' => 'bail|required|exists:purchases, id',
-            'donor_id' => 'bail|required|exists:donors,id',
-            'donation_id' => 'bail|required|exists:donations_id'
+            'id' => 'required|exists:purchases, id',
+            'donor_id' => 'required|exists:donors,id',
+            'donation_id' => 'required|exists:donations_id'
         ]);
 
         $purchase = Purchase::find(
@@ -88,6 +88,7 @@ class PurchaseController extends Controller
 
         $purchase->donor_id = $request->donor_id;
         $purchase->donation_id = $request->donation_id;
+        $purchase->payment_status = $request->payment_status;
 
         try {
             $purchase->saveOrFail();
