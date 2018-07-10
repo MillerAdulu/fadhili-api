@@ -19,6 +19,7 @@
         'donationName' => $this->name,
         'donationPrice' => $this->price,
         'donationDestination' => $this->destination,
+		'donationContents' => $this->contents,
         'createdAt' => (string) $this->created_at,
         'updatedAt' => (string) $this->updated_at
       ];
