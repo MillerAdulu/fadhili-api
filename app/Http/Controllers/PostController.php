@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\PostCollection;
 use App\Http\Resources\PostResource;
-use TCG\Voyager\Models\Post;
+use App\Post;
 
 class PostController extends Controller
 {
