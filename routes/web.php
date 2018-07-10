@@ -60,6 +60,7 @@ Route::group(['prefix' => 'collectioncenter'], function () {
   Route::get('/', 'CollectionCentersController@index');
 });
 
-Route::group(['prefix' => 'comment'], function (){
+Route::group(['prefix' => 'comment'], function () {
   Route::get('/{post_id}', 'CommentController@index');
+  Route::post('/add', 'CommentController@comment');
 });
