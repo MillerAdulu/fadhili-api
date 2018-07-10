@@ -55,3 +55,7 @@ Route::group(['prefix' => 'destination'], function () {
 	Route::get('/', 'DestinationController@index');
 	Route::get('/{id}', 'DestinationController@show');
 });
+
+Route::group(['prefix' => 'collectioncenter'], function () {
+  Route::get('/', 'CollectionCentersController@index');
+});
