@@ -63,7 +63,7 @@ class PurchaseController extends Controller
     {
          return new PurchaseCollection (
 			PurchaseResource::collection(
-            	Purchase::where('donor_id', $id)
+            	Purchase::where('donor_id', $id)->get()
         	)
 		);
     }
